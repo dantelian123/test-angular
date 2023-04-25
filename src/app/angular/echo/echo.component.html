@@ -1,0 +1,14 @@
+<div class="bg">
+  <div class="card">
+    <h2>Echo</h2>
+    <!--BEGIN: CAMBIOS AQUI-->
+    <label for="message">Mensaje</label>
+    <input id="message" type="text" value="echo" [(ngModel)]="input"/>
+
+    <p *ngIf="input !='';else empty ">Texto: {{input}}</p>
+    <ng-template #empty>
+      <p>Prueba two way binding</p>
+    </ng-template>
+    <!--END: CAMBIOS AQUI-->
+  </div>
+</div>

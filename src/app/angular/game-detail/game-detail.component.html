@@ -1,0 +1,36 @@
+<div class="bg">
+  <div class="card">
+    <h2 class="title">Editar Juego</h2>
+    <!--BEGIN: TUS CAMBIOS AQUI-->
+    <form>
+      <div class="field">
+        <label for="id">Id</label>
+        <input id="id" type="text" disabled value="{{ game.id }}" />
+      </div>
+      <div class="field">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" [(ngModel)]="game.name" name="game.name" value="{{ game.name }}" />
+      </div>
+      <div class="field">
+        <label for="name">Descripción</label>
+        <textarea
+          id="name"
+          type="text"
+          name="game.description"
+          [(ngModel)]="game.description"
+          value="{{ game.description }}"
+        ></textarea>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn-primary" (click)="actualizar(game.id)">Actualizar</button>
+        <a
+          [routerLink]="['/angular/senior/games']"
+          routerLinkActive="router-link-active"
+          class="btn-secondary"
+          >Cancelar</a
+        >
+      </div>
+    </form>
+    <!--END: TUS CAMBIOS AQUI-->
+  </div>
+</div>

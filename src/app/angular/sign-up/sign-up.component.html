@@ -1,0 +1,58 @@
+<div class="bg">
+  <div class="card">
+    <h2>Registrarse</h2>
+    <!--BEGIN: CAMBIOS AQUI-->
+    <form [formGroup]="myFormLogin" (ngSubmit)="submit()">
+      <div>
+        <label>Nombre</label>
+        <input
+          id="name"
+          formControlName="name"
+          [class.is-invalid]="f.name.errors && f.name.touched"
+          type="text"
+          required
+        />
+      </div>
+      <div>
+        <label>Correo Electrónico</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.is-invalid]="f.email.errors && f.email.touched"
+        />
+      </div>
+      <div>
+        <label>Nombre de Usuario</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="username"
+          [class.is-invalid]="f.username.errors && f.username.touched"
+        />
+      </div>
+      <div>
+        <label>Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [class.is-invalid]="f.password.errors && f.password.touched"
+        />
+      </div>
+      <div>
+        <label>Confirmar Contraseña</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="passwordRepeat"
+          [class.is-invalid]="
+            f.passwordRepeat.errors && f.passwordRepeat.touched
+          "
+        />
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+    <!--END: CAMBIOS AQUI-->
+  </div>
+</div>
